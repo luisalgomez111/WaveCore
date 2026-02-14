@@ -4,150 +4,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnología | WaveCore - Stack Técnico</title>
+    <title>Documentación Técnica | WaveCore</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        .tech-hero {
-            padding-top: 150px;
-            padding-bottom: 80px;
-            text-align: center;
+        :root {
+            --sidebar-width: 280px;
         }
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+        body {
+            background-color: #0a0a0b;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        .tech-card {
-            background: var(--bg-card);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid var(--glass-border);
-            transition: 0.4s;
+        .doc-layout {
+            display: flex;
+            flex: 1;
+            margin-top: 100px;
+            position: relative;
         }
 
-        .tech-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
+        /* Sidebar Styling */
+        .doc-sidebar {
+            width: var(--sidebar-width);
+            height: calc(100vh - 100px);
+            position: sticky;
+            top: 100px;
+            padding: 40px 20px;
+            border-right: 1px solid var(--glass-border);
+            overflow-y: auto;
+            background: rgba(10, 10, 11, 0.8);
+            backdrop-filter: blur(10px);
         }
 
-        .tech-icon {
+        .doc-nav-list {
+            list-style: none;
+        }
+
+        .doc-nav-item {
+            margin-bottom: 5px;
+        }
+
+        .doc-nav-link {
+            display: block;
+            padding: 10px 15px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .doc-nav-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+        }
+
+        .doc-nav-link.active {
+            background: rgba(215, 82, 57, 0.1);
             color: var(--primary);
+            font-weight: 600;
+        }
+
+        .doc-nav-group {
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary);
+            padding-left: 15px;
+            opacity: 0.8;
+        }
+
+        /* Content Styling */
+        .doc-content {
+            flex: 1;
+            padding: 40px 60px 100px;
+            max-width: 900px;
+        }
+
+        .doc-section {
+            margin-bottom: 80px;
+            scroll-margin-top: 120px;
+        }
+
+        .doc-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .doc-section h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        .doc-section h3 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .doc-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
             margin-bottom: 20px;
         }
 
-        .tech-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-        }
-
-        .tech-card p {
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        .architecture-section {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 80px 40px;
-            border-radius: 40px;
+        .code-block {
+            background: #161618;
             border: 1px solid var(--glass-border);
-            margin-bottom: 100px;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            color: #d1d1d1;
+            overflow-x: auto;
         }
 
-        .back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .tech-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tech-item {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .tech-item i {
             color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
         }
 
-        .back-home:hover {
-            color: #fff;
+        .architecture-diagram {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 1024px) {
+            .doc-sidebar {
+                display: none;
+            }
+
+            .doc-content {
+                padding: 40px 20px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="top-bar">
-        🚀 WaveCore ya está desplegado automáticamente en Vercel. ¡Cambios en tiempo real!
-    </nav>
-    <nav class="glass-nav" style="top: 36px;">
+    <nav class="glass-nav">
         <div class="container nav-content">
             <a href="index.html" class="logo" style="text-decoration: none;">
                 <img src="img/logo.png" alt="WaveCore Logo" class="nav-logo-img">
                 <span>WaveCore</span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#features">Características</a></li>
-                <li><a href="tech.html" class="active" style="color: #fff;">Tecnología</a></li>
-                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#features">Inicio</a></li>
+                <li><a href="#intro" class="active">Documentación</a></li>
                 <li><a href="index.html#download" class="btn-primary">Descargar</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container">
-        <section class="tech-hero">
-            <a href="index.html" class="back-home"><i data-lucide="arrow-left"></i> Volver al Inicio</a>
-            <h1 class="text-gradient">El Corazón de WaveCore</h1>
-            <p class="hero-subtitle">Descubre el stack tecnológico y las decisiones arquitectónicas que hacen de
-                WaveCore una herramienta líder en rendimiento.</p>
-        </section>
+    <div class="container doc-layout">
+        <aside class="doc-sidebar">
+            <ul class="doc-nav-list">
+                <li class="doc-nav-group">Introducción</li>
+                <li class="doc-nav-item"><a href="#usage" class="doc-nav-link">¿Qué es WaveCore?</a></li>
+                <li class="doc-nav-item"><a href="#requirements" class="doc-nav-link">Requerimientos</a></li>
 
-        <div class="tech-grid">
-            <div class="tech-card">
-                <div class="tech-icon"><i data-lucide="cpu"></i></div>
-                <h3>Python 3.12 Core</h3>
-                <p>Utilizamos Python como lenguaje base por su flexibilidad y potente ecosistema de procesamiento de
-                    datos, garantizando una lógica de negocio robusta.</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-icon"><i data-lucide="layers"></i></div>
-                <h3>PyQt6 Framework</h3>
-                <p>La interfaz gráfica está construida con Qt6, proporcionando una experiencia nativa de alto
-                    rendimiento con aceleración por hardware en Windows.</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-icon"><i data-lucide="music"></i></div>
-                <h3>FFmpeg Engine</h3>
-                <p>El procesamiento de audio y la generación de formas de onda se apoyan en FFmpeg, el estándar de la
-                    industria para manipulación multimedia.</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-icon"><i data-lucide="database"></i></div>
-                <h3>SQLite & QSettings</h3>
-                <p>La persistencia de datos y la indexación rápida de la bóveda se gestionan mediante una capa de base
-                    de datos local optimizada para búsquedas instantáneas.</p>
-            </div>
-        </div>
+                <li class="doc-nav-group">Ingeniería</li>
+                <li class="doc-nav-item"><a href="#stack" class="doc-nav-link">Stack Tecnológico</a></li>
+                <li class="doc-nav-item"><a href="#architecture" class="doc-nav-link">Arquitectura Modular</a></li>
 
-        <section class="architecture-section reveal">
-            <h2 style="margin-bottom: 30px;">Arquitectura y Metodología</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
-                <div>
-                    <h4 style="color: var(--primary); margin-bottom: 10px;">Enfoque Modular</h4>
-                    <p style="color: var(--text-muted);">WaveCore separa estrictamente la capa de UI (PyQt) de la capa
-                        de audio (FFmpeg/SoundFile), permitiendo una escalabilidad sin precedentes y un mantenimiento
-                        sencillo.</p>
+                <li class="doc-nav-group">Desarrollo</li>
+                <li class="doc-nav-item"><a href="#build" class="doc-nav-link">Guía de Compilación</a></li>
+                <li class="doc-nav-item"><a href="#cicd" class="doc-nav-link">CI/CD y Despliegue</a></li>
+            </ul>
+        </aside>
+
+        <main class="doc-content">
+            <section id="intro" class="doc-section reveal">
+                <h1>Documentación Técnica</h1>
+                <p>Bienvenido a la guía de ingeniería de WaveCore. Este documento detalla la infraestructura, decisiones
+                    de diseño y el stack tecnológico que sustenta nuestra plataforma de gestión de audio de alto
+                    rendimiento.</p>
+
+                <h2 id="usage">¿Qué es WaveCore?</h2>
+                <p>WaveCore es una aplicación de escritorio diseñada para profesionales del sonido (editores de video,
+                    diseñadores de FX, músicos) que necesitan gestionar librerías masivas con velocidad quirúrgica. A
+                    diferencia de un explorador de archivos común, WaveCore indexa metadatos técnicos y genera
+                    visualizaciones de onda al instante.</p>
+            </section>
+
+            <section id="requirements" class="doc-section reveal">
+                <h2>Requerimientos del Sistema</h2>
+                <div class="tech-box">
+                    <div class="tech-item">
+                        <i data-lucide="monitor"></i>
+                        <h4>Windows 10/11</h4>
+                        <p>Optimizado para x64</p>
+                    </div>
+                    <div class="tech-item">
+                        <i data-lucide="cpu"></i>
+                        <h4>Dual Core+</h4>
+                        <p>2GB RAM recomendado</p>
+                    </div>
+                    <div class="tech-item">
+                        <i data-lucide="hard-drive"></i>
+                        <h4>FFmpeg Core</h4>
+                        <p>Binarios incluidos</p>
+                    </div>
                 </div>
-                <div>
-                    <h4 style="color: var(--primary); margin-bottom: 10px;">CI/CD Moderno</h4>
-                    <p style="color: var(--text-muted);">Cada cambio en el código pasa por un pipeline automatizado que
-                        despliega la documentación en Vercel y prepara los empaquetados de PyInstaller instantáneamente.
-                    </p>
+            </section>
+
+            <section id="stack" class="doc-section reveal">
+                <h2>Stack Tecnológico</h2>
+                <p>Hemos seleccionado tecnologías que equilibran la rapidez de desarrollo con el rendimiento en tiempo
+                    real:</p>
+
+                <h3>Lógica: Python 3.12</h3>
+                <p>Utilizado para la gestión de la "Bóveda" (Vault), la manipulación de la base de datos local y la
+                    comunicación con APIs externas (Freesound).</p>
+
+                <h3>Interfaz: PyQt6</h3>
+                <p>Qt6 permite una renderización fluida del visor de ondas y una gestión de hilos (Threads) eficiente
+                    para que la interfaz nunca se bloquee durante la indexación.</p>
+
+                <h3>Audio: FFmpeg & SoundFile</h3>
+                <p>FFmpeg se encarga de la decodificación de formatos complejos (WAV, MP3, OGG, FLAC) y la extracción de
+                    datos de amplitud para el visor profesional.</p>
+
+                <div class="code-block">
+                    # Ejemplo de inicialización del motor de audio
+                    self.player = AudioPlayer()
+                    self.player.load(file_path)
+                    self.waveform.generate(file_path)
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+
+            <section id="architecture" class="doc-section reveal">
+                <h2>Arquitectura Modular</h2>
+                <p>WaveCore sigue un patrón de diseño desacoplado para asegurar la estabilidad:</p>
+                <div class="architecture-diagram">
+                    <p style="color: var(--primary); font-weight: 800;">UI LAYER (PyQt6)</p>
+                    <p>⇅ (Signals & Slots)</p>
+                    <p style="color: #fff;">CORE LOGIC (Python Threads)</p>
+                    <p>⇅ (Direct I/O)</p>
+                    <p style="color: #888;">HARDWARE (FFmpeg Engine / SSD)</p>
+                </div>
+                <p>Este sistema permite que mientras el motor de audio procesa un archivo, el usuario pueda seguir
+                    buscando otros sonidos sin latencia.</p>
+            </section>
+
+            <section id="build" class="doc-section reveal">
+                <h2>Guía de Compilación</h2>
+                <p>Para construir WaveCore desde el código fuente, utiliza nuestro script de build optimizado:</p>
+                <div class="code-block">
+                    # Instalar dependencias
+                    pip install -r requirements.txt
+
+                    # Ejecutar script de empaquetado
+                    python build_exe.py
+                </div>
+                <p>Este proceso genera un ejecutable `.exe` portátil que incluye todas las dependencias y el motor
+                    FFmpeg necesario para su funcionamiento.</p>
+            </section>
+
+            <section id="cicd" class="doc-section reveal">
+                <h2>CI/CD y Despliegue</h2>
+                <p>WaveCore utiliza una infraestructura moderna de integración continua. Cada "Push" al repositorio de
+                    GitHub activa una acción de automatización:</p>
+                <ul>
+                    <li style="color: var(--text-muted); margin-bottom: 10px;"><b>Web:</b> Se despliega automáticamente
+                        en Vercel para mantener la documentación siempre actualizada.</li>
+                    <li style="color: var(--text-muted); margin-bottom: 10px;"><b>App:</b> Se preparan los logs de
+                        cambios y se validan las rutas de los instaladores generados con Inno Setup.</li>
+                </ul>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <div class="container footer-content">
@@ -161,13 +324,34 @@
     <script>
         lucide.createIcons();
 
-        // Reveal animation simple logic
+        // Reveal animation logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        });
+        }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll sidebar highlight (Basic)
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.doc-section');
+            const navLinks = document.querySelectorAll('.doc-nav-link');
+
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 
