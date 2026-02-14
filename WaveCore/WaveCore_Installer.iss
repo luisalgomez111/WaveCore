@@ -4,13 +4,13 @@
 [Setup]
 AppId={{C6E253A3-84B1-4A2D-BA3C-9A8D6E1F2031}
 AppName=WaveCore Audio Library
-AppVersion=1.0.0
+AppVersion=1.0.1
 AppPublisher=Luis Alberto Gómez
 DefaultDirName={autopf}\WaveCore
 DefaultGroupName=WaveCore
 AllowNoIcons=yes
 OutputDir=Output
-OutputBaseFilename=WaveCore_Setup_v1.0.0
+OutputBaseFilename=WaveCore_Setup_v1.0.1
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern

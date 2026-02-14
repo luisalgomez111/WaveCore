@@ -48,13 +48,13 @@ class MainWindow(QMainWindow):
         QTimer.singleShot(1000, self.show_welcome_screen)
 
     def show_welcome_screen(self):
-        if self.settings.value("show_welcome", True, type=bool):
-            from ui.dialogs import WelcomeDialog
-            title = self.localizer.get("dialog_welcome_title")
-            html = self.localizer.get("dialog_welcome_html")
-            dlg = WelcomeDialog(title, html, self)
-            dlg.exec()
-            self.settings.setValue("show_welcome", False)
+        # Always show welcome screen as per user request
+        from ui.dialogs import WelcomeDialog
+        title = self.localizer.get("dialog_welcome_title")
+        html = self.localizer.get("dialog_welcome_html")
+        dlg = WelcomeDialog(title, html, self)
+        dlg.exec()
+        # self.settings.setValue("show_welcome", False) # Disabled to show every time
 
     def load_vault(self):
         vault_path = fops.ensure_vault_exists()
@@ -511,17 +511,30 @@ class MainWindow(QMainWindow):
             self.scan_and_display_files(path)
 
     def load_favorites_list(self):
-        if hasattr(self, 'scanner_thread') and self.scanner_thread.isRunning():
-            self.scanner_thread.stop()
+        try:
+            if hasattr(self, 'scanner_thread') and self.scanner_thread.isRunning():
+                self.scanner_thread.stop()
+                
+            self.library_model.clear()
+            paths = self.fav_manager.get_all()
+            if not paths: 
+                print("No favorites found.")
+                return
             
-        self.library_model.clear()
-        paths = self.fav_manager.get_all()
-        if not paths: return
-        
-        self.scanner_thread = ScannerThread(file_paths=paths)
-        self.scanner_thread.batch_found.connect(self.on_scan_batch)
-        self.scanner_thread.finished_scan.connect(self.on_scan_finished)
-        self.scanner_thread.start()
+            # Filter non-existent files
+            valid_paths = [p for p in paths if os.path.exists(p)]
+            if not valid_paths:
+                print("No valid favorite files found on disk.")
+                return
+
+            self.scanner_thread = ScannerThread(file_paths=valid_paths)
+            self.scanner_thread.batch_found.connect(self.on_scan_batch)
+            self.scanner_thread.finished_scan.connect(self.on_scan_finished)
+            self.scanner_thread.start()
+        except Exception as e:
+            print(f"Error loading favorites: {e}")
+            import traceback
+            traceback.print_exc()
 
 
     def scan_and_display_files(self, folder_path):

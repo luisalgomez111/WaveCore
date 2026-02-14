@@ -1,7 +1,7 @@
 import os
 
 APP_NAME = "WaveCore"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 VAULT_FOLDER_NAME = "WaveCore Vault"
 
 def get_vault_path():

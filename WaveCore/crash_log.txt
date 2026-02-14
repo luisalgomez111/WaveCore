@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "D:\WaveCore\WaveCore\src\utils\scanner_thread.py", line 18, in run
+    from utils.metadata_reader import get_track_metadata
+  File "D:\WaveCore\WaveCore\src\utils\metadata_reader.py", line 2, in <module>
+    import mutagen
+ModuleNotFoundError: No module named 'mutagen'

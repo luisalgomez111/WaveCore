@@ -23,6 +23,7 @@ args = [
     '--noconsole',
     f'--paths={os.path.join(project_root, "src")}',
     f'--add-data={resources_src}{os.pathsep}{resources_dst}',
+    f'--icon={os.path.join(project_root, "src", "resources", "icons", "WaveCore.ico")}',
     '--clean',
     '--distpath=dist',
     '--workpath=build',

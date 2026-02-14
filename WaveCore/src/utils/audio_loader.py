@@ -66,7 +66,7 @@ def load_waveform_data(file_path, points=1000):
                 
                 curr_frames_read += len(mono_block)
                 if curr_frames_read >= frames: break
-                
+
         # Normalización visual
         max_val = np.max(reduced_data)
         if max_val > 0:
@@ -75,5 +75,40 @@ def load_waveform_data(file_path, points=1000):
         return reduced_data, duration, channels
         
     except Exception as e:
-        print(f"Error reading {file_path}: {e}")
-        return np.zeros(points), 0, 0
+        print(f"Soundfile failed: {e}. Trying miniaudio...")
+        try:
+            import miniaudio
+            info = miniaudio.get_file_info(file_path)
+            decoded = miniaudio.decode_file(file_path, nchannels=1, sample_rate=info.sample_rate) # Mono for waveform
+            
+            # Decoded samples are int16 by default
+            samples = np.array(decoded.samples, dtype=np.float32) / 32768.0
+            
+            duration = info.duration
+            channels = info.nchannels
+            
+            # Resample to 'points'
+            num_samples = len(samples)
+            if num_samples > points:
+                # Simple decimation
+                step = num_samples // points
+                reduced_data = np.zeros(points, dtype=np.float32)
+                for i in range(points):
+                    start = i * step
+                    end = start + step
+                    chunk = samples[start:end]
+                    if len(chunk) > 0:
+                        reduced_data[i] = np.max(np.abs(chunk))
+            else:
+                reduced_data = samples
+                
+            # Normalize
+            max_val = np.max(reduced_data)
+            if max_val > 0:
+                reduced_data = reduced_data / max_val
+                
+            return reduced_data, duration, channels
+            
+        except Exception as e2:
+            print(f"Miniaudio failed: {e2}")
+            return np.zeros(points), 0, 0
