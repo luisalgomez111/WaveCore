@@ -664,98 +664,63 @@ footer {
 }
 
 .community-hub {
-    flex: 1.5;
-    padding: 40px;
-}
-
-.forum-container {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.comment-list {
-    max-height: 400px;
-    overflow-y: auto;
-    padding-right: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.comment-item {
-    display: flex;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 15px;
-    border-radius: 12px;
-    border: 1px solid var(--glass-border);
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: 800;
-    font-size: 0.8rem;
-    flex-shrink: 0;
+    align-items: center;
+    padding: 60px 40px;
 }
 
-.comment-body strong {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 0.95rem;
+.telegram-cta {
+    text-align: center;
 }
 
-.comment-body p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 5px;
+.telegram-icon {
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
 }
 
-.comment-date {
-    font-size: 0.75rem;
-    opacity: 0.5;
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
-.comment-form {
-    border-top: 1px solid var(--glass-border);
-    padding-top: 20px;
-}
-
-.comment-form h3 {
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-input {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    padding: 12px 15px;
-    border-radius: 10px;
+.telegram-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
     color: #fff;
-    font-family: inherit;
-    transition: 0.3s;
 }
 
-.form-input:focus {
-    border-color: var(--primary);
-    outline: none;
-    background: rgba(255, 255, 255, 0.08);
+.telegram-cta p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
 }
 
-textarea.form-input {
-    min-height: 100px;
-    resize: vertical;
+.btn-telegram {
+    background: #0088cc;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0, 136, 204, 0.3);
+}
+
+.btn-telegram:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 136, 204, 0.5);
+    background: #00a2f3;
 }
 
 /* Donate */
