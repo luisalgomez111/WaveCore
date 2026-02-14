@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnología | WaveCore - Stack Técnico</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .tech-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            text-align: center;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .tech-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--glass-border);
+            transition: 0.4s;
+        }
+
+        .tech-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .tech-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .tech-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .architecture-section {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 80px 40px;
+            border-radius: 40px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 100px;
+        }
+
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .back-home:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="top-bar">
+        🚀 WaveCore ya está desplegado automáticamente en Vercel. ¡Cambios en tiempo real!
+    </nav>
+    <nav class="glass-nav" style="top: 36px;">
+        <div class="container nav-content">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <img src="img/logo.png" alt="WaveCore Logo" class="nav-logo-img">
+                <span>WaveCore</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Características</a></li>
+                <li><a href="tech.html" class="active" style="color: #fff;">Tecnología</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#download" class="btn-primary">Descargar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="tech-hero">
+            <a href="index.html" class="back-home"><i data-lucide="arrow-left"></i> Volver al Inicio</a>
+            <h1 class="text-gradient">El Corazón de WaveCore</h1>
+            <p class="hero-subtitle">Descubre el stack tecnológico y las decisiones arquitectónicas que hacen de
+                WaveCore una herramienta líder en rendimiento.</p>
+        </section>
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-icon"><i data-lucide="cpu"></i></div>
+                <h3>Python 3.12 Core</h3>
+                <p>Utilizamos Python como lenguaje base por su flexibilidad y potente ecosistema de procesamiento de
+                    datos, garantizando una lógica de negocio robusta.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon"><i data-lucide="layers"></i></div>
+                <h3>PyQt6 Framework</h3>
+                <p>La interfaz gráfica está construida con Qt6, proporcionando una experiencia nativa de alto
+                    rendimiento con aceleración por hardware en Windows.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon"><i data-lucide="music"></i></div>
+                <h3>FFmpeg Engine</h3>
+                <p>El procesamiento de audio y la generación de formas de onda se apoyan en FFmpeg, el estándar de la
+                    industria para manipulación multimedia.</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-icon"><i data-lucide="database"></i></div>
+                <h3>SQLite & QSettings</h3>
+                <p>La persistencia de datos y la indexación rápida de la bóveda se gestionan mediante una capa de base
+                    de datos local optimizada para búsquedas instantáneas.</p>
+            </div>
+        </div>
+
+        <section class="architecture-section reveal">
+            <h2 style="margin-bottom: 30px;">Arquitectura y Metodología</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">Enfoque Modular</h4>
+                    <p style="color: var(--text-muted);">WaveCore separa estrictamente la capa de UI (PyQt) de la capa
+                        de audio (FFmpeg/SoundFile), permitiendo una escalabilidad sin precedentes y un mantenimiento
+                        sencillo.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">CI/CD Moderno</h4>
+                    <p style="color: var(--text-muted);">Cada cambio en el código pasa por un pipeline automatizado que
+                        despliega la documentación en Vercel y prepara los empaquetados de PyInstaller instantáneamente.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Luis Alberto Gómez. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/luisalgomez111/WaveCore">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Reveal animation simple logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
