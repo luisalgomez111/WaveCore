@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Distribution / Build
+dist/
+build/
+*.exe
+*.msi
+*.whl
+
+# Inno Setup
+Output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Node / JS
+node_modules/
+
+# Editor / System
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.sln
+*.sw?

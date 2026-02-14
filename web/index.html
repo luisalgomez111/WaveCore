@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveCore | Bóveda de Audio Profesional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="img/logo.png" alt="WaveCore Logo" class="nav-logo-img">
+                <span>WaveCore</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Características</a></li>
+                <li><a href="#how-it-works">Explora</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#donate">Apoyar</a></li>
+                <li><a href="#download" class="btn-primary">Descargar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="container hero-content">
+            <img src="img/logo.png" alt="WaveCore Large Logo" class="hero-logo fade-in">
+            <h1 class="fade-in">Tu Bóveda de Audio <span class="text-gradient" id="typewriter"></span></h1>
+            <p class="hero-subtitle fade-in-delay">Gestiona, busca y exporta tus efectos de sonido con la velocidad del
+                rayo. Diseñado por y para creativos.</p>
+            <div class="hero-actions fade-in-delay-large">
+                <a href="#download" class="btn-hero">Obtener WaveCore</a>
+                <a href="https://github.com/luisalgomez111/WaveCore" class="btn-secondary">Ver en GitHub</a>
+            </div>
+        </div>
+        <div class="hero-glow"></div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">¿Por qué WaveCore?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="library"></i></div>
+                    <h3>Bóveda Local</h3>
+                    <p>Organiza miles de archivos con indexación instantánea y visualización de forma de onda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="search"></i></div>
+                    <h3>Búsqueda Online</h3>
+                    <p>Integración nativa con Freesound. Encuentra lo que buscas sin salir de la aplicación.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="mouse-pointer-2"></i></div>
+                    <h3>Drag & Drop</h3>
+                    <p>Arrastra fragmentos de audio directamente a tu DAW o editor de video favorito.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i data-lucide="zap"></i></div>
+                    <h3>Auto-Update</h3>
+                    <p>Mantente siempre al día con actualizaciones automáticas directas desde GitHub.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works reveal">
+        <div class="container">
+            <h2 class="section-title">¿Cómo funciona?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-icon"><i data-lucide="folder-open"></i></div>
+                    <h4>Importa tu Bóveda</h4>
+                    <p>Selecciona tu carpeta raíz. WaveCore indexa todo al instante con formas de onda generadas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-num-line"></div>
+                    <div class="step-icon"><i data-lucide="radio"></i></div>
+                    <h4>Busca y Filtra</h4>
+                    <p>Usa la búsqueda local o explora Freesound directamente. Todo con previsualización en tiempo real.
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-num-line"></div>
+                    <div class="step-icon"><i data-lucide="hand-metal"></i></div>
+                    <h4>Arregla y Exporta</h4>
+                    <p>Selecciona un fragmento en la onda y arrástralo a tu Premiere, DAW o carpeta. ¡Listo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq reveal">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">¿Dónde se guardan mis datos? <i
+                            data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Tus favoritos y caché se guardan localmente en tu perfil de usuario. Tu biblioteca de audio
+                            nunca se mueve de su carpeta original.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Es WaveCore gratuito? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Sí, WaveCore es 100% gratuito para uso personal y profesional. Si te gusta, puedes apoyar el
+                            desarrollo con una donación.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Funciona en Mac o Linux? <i data-lucide="chevron-down"></i></button>
+                    <div class="faq-answer">
+                        <p>Actualmente solo está disponible para Windows (x64), pero el soporte para macOS está en
+                            nuestros planes futuros.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="donate" class="donate reveal">
+        <div class="container">
+            <h2 class="section-title">Apoya el Proyecto</h2>
+            <div class="donate-grid">
+                <div class="donate-card glass-card">
+                    <div class="donate-icon"><i data-lucide="heart"></i></div>
+                    <h3>PayPal</h3>
+                    <p>Apoyo directo para servidores y herramientas de desarrollo.</p>
+                    <a href="https://paypal.me/luisalbertogomez111" class="btn-secondary" target="_blank">Donar via
+                        PayPal</a>
+                </div>
+                <div class="donate-card glass-card">
+                    <div class="donate-icon"><i data-lucide="wallet"></i></div>
+                    <h3>Binance (USDT)</h3>
+                    <p>Red: BEP20 / TRC20</p>
+                    <div class="copy-box" onclick="copyBinance()">
+                        <span id="binance-addr">luisalbertogomez111@gmail.com</span>
+                        <i data-lucide="copy"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="download-section reveal">
+        <div class="container glass-card">
+            <h2>¿Listo para optimizar tu flujo de trabajo?</h2>
+            <p>Descarga WaveCore v1.0.0 para Windows hoy mismo.</p>
+            <a href="#" class="btn-download-main">Descargar Instalador (.exe)</a>
+            <p class="version-info">Versión 1.0.0 | Gratuito para uso personal y profesional</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Luis Alberto Gómez. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/luisalgomez111/WaveCore">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Particles System
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        window.onresize = resize;
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = Math.random() * 0.5 - 0.25;
+                this.speedY = Math.random() * 0.5 - 0.25;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(215, 82, 57, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // Reveal on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Typewriter Effect
+        const words = ["Profesional", "Rápida", "Inteligente", "Creativa"];
+        let i = 0, j = 0, current = "", isDeleting = false;
+        function type() {
+            const display = document.getElementById("typewriter");
+            const fullText = words[i];
+            if (isDeleting) {
+                current = fullText.substring(0, j--);
+            } else {
+                current = fullText.substring(0, j++);
+            }
+            display.innerHTML = current;
+            let speed = isDeleting ? 100 : 200;
+            if (!isDeleting && j > fullText.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % words.length;
+                speed = 500;
+            }
+            setTimeout(type, speed);
+        }
+        type();
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+                const icon = button.querySelector('i');
+                if (faqItem.classList.contains('active')) {
+                    icon.setAttribute('data-lucide', 'chevron-up');
+                } else {
+                    icon.setAttribute('data-lucide', 'chevron-down');
+                }
+                lucide.createIcons();
+            });
+        });
+
+        // Copy Binance
+        function copyBinance() {
+            const addr = document.getElementById("binance-addr").innerText;
+            navigator.clipboard.writeText(addr);
+            alert("Dirección copiada al portapapeles");
+        }
+    </script>
+</body>
+
+</html>
