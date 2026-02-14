@@ -14,9 +14,13 @@
 </head>
 
 <body>
-    <div class="top-bar">
-        🚀 WaveCore ya está desplegado automáticamente en Vercel. ¡Cambios en tiempo real!
-    </div>
+    <nav class="top-bar">
+        <div class="marquee-container">
+            <span class="marquee-text">✨ ¡Bienvenido a WaveCore! Lanzamiento de la versión 1.0.0. Optimiza tu flujo de
+                trabajo con nuestra herramienta profesional de gestión de audio. ¡Únete a nuestra comunidad en Telegram!
+                ✨</span>
+        </div>
+    </nav>
     <nav class="glass-nav">
         <div class="container nav-content">
             <div class="logo">
@@ -232,37 +236,23 @@
         <div class="container branding-container">
             <div class="community-header">
                 <h2 class="section-title">Comunidad WaveCore</h2>
-                <p>Únete a la conversación, comparte tus librerías y deja tus sugerencias para mejorar la app.</p>
+                <p>Únete a nuestro canal oficial para estar al día con las últimas novedades, compartir librerías y
+                    conversar directamente con el equipo.</p>
                 <div class="community-stats">
-                    <span><i data-lucide="users"></i> 1,200+ Miembros</span>
-                    <span><i data-lucide="message-square"></i> 450+ Comentarios</span>
+                    <span><i data-lucide="send"></i> Comunidad en Telegram</span>
+                    <span><i data-lucide="shield-check"></i> Soporte Oficial</span>
                 </div>
             </div>
             <div class="community-hub glass-card">
-                <div class="forum-container">
-                    <div id="comment-list" class="comment-list">
-                        <!-- Comentarios cargados dinámicamente -->
-                        <div class="comment-item">
-                            <div class="avatar">JC</div>
-                            <div class="comment-body">
-                                <strong>Juan Carlos</strong>
-                                <p>¡Increíble herramienta! El visor de ondas es súper fluido.</p>
-                                <span class="comment-date">Hace 2 horas</span>
-                            </div>
-                        </div>
+                <div class="telegram-cta">
+                    <div class="telegram-icon">
+                        <i data-lucide="send" style="width: 64px; height: 64px; color: #0088cc;"></i>
                     </div>
-
-                    <div class="comment-form">
-                        <h3>Deja tu Comentario</h3>
-                        <div class="form-group">
-                            <input type="text" id="user-name" placeholder="Tu nombre" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <textarea id="user-comment" placeholder="¿Qué estás pensando?"
-                                class="form-input"></textarea>
-                        </div>
-                        <button onclick="postComment()" class="btn-primary">Registrar y Publicar</button>
-                    </div>
+                    <h3>Canal de Telegram</h3>
+                    <p>Acceso instantáneo a actualizaciones, betas y feedback directo.</p>
+                    <a href="https://t.me/WaveCoreComunidad" target="_blank" class="btn-telegram">
+                        <i data-lucide="external-link"></i> Abrir Telegram
+                    </a>
                 </div>
             </div>
         </div>
@@ -386,6 +376,7 @@
         let i = 0, j = 0, current = "", isDeleting = false;
         function type() {
             const display = document.getElementById("typewriter");
+            if (!display) return;
             const fullText = words[i];
             if (isDeleting) {
                 current = fullText.substring(0, j--);
@@ -427,8 +418,6 @@
             navigator.clipboard.writeText(addr);
             alert("Dirección copiada al portapapeles");
         }
-
-        loadComments();
     </script>
 </body>
 
