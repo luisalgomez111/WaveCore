@@ -44,6 +44,15 @@ class MainWindow(QMainWindow):
         # --- LOAD VAULT ---
         self.load_vault()
 
+        # Show Welcome Dialog if it's the first run
+        if self.settings.value("show_welcome", True, type=bool):
+            from ui.dialogs import CustomDialog
+            title = self.localizer.get("dialog_welcome_title")
+            html = self.localizer.get("dialog_welcome_html")
+            dlg = CustomDialog(title, html, self, width=550)
+            dlg.exec()
+            self.settings.setValue("show_welcome", False)
+
     def load_vault(self):
         vault_path = fops.ensure_vault_exists()
         if vault_path:

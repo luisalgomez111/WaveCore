@@ -54,6 +54,20 @@ TRANSLATIONS = {
         "col_format": "Format",
         "col_bpm": "BPM",
         "col_waveform": "Waveform",
+        "dialog_welcome_title": "Welcome to WaveCore",
+        "dialog_welcome_html": """
+            <h2 style='color: #D75239; margin-bottom: 10px;'>Welcome to WaveCore!</h2>
+            <p>Thank you for choosing WaveCore. Here's a quick guide to get you started:</p>
+            <ul style='margin-left: 15px;'>
+                <li><b>Vault:</b> Your audio files are indexed automatically in the <b>Library</b> tab.</li>
+                <li><b>Search:</b> Use the <b>Online</b> tab to find sounds on Freesound directly.</li>
+                <li><b>Drag & Drop:</b> Drag any clip or selection from the waveform to your DAW.</li>
+            </ul>
+            <hr style='border: 0; border-top: 1px solid #333; margin: 15px 0;'>
+            <p><b>Useful Links:</b></p>
+             <p style='margin-top: 10px;'>🌐 <a href='https://luisalgomez111.github.io/WaveCore/' style='color: #D75239; text-decoration: none;'>Official Website (GitHub Pages)</a></p>
+             <p>🐙 <a href='https://github.com/luisalgomez111/WaveCore' style='color: #D75239; text-decoration: none;'>GitHub Repository</a></p>
+        """,
     },
     "es": {
         "window_title": f"Librería de Audio WaveCore v{VERSION}",
@@ -108,6 +122,20 @@ TRANSLATIONS = {
         "col_format": "Formato",
         "col_bpm": "BPM",
         "col_waveform": "Onda",
+        "dialog_welcome_title": "Bienvenido a WaveCore",
+        "dialog_welcome_html": """
+            <h2 style='color: #D75239; margin-bottom: 10px;'>¡Bienvenido a WaveCore!</h2>
+            <p>Gracias por elegir WaveCore. Aquí tienes una guía rápida para comenzar:</p>
+            <ul style='margin-left: 15px;'>
+                <li><b>Bóveda:</b> Tus archivos se indexan automáticamente en la pestaña <b>Library</b>.</li>
+                <li><b>Búsqueda:</b> Usa la pestaña <b>Online</b> para buscar sonidos en Freesound.</li>
+                <li><b>Drag & Drop:</b> Arrastra cualquier clip o selección directamente a tu DAW.</li>
+            </ul>
+            <hr style='border: 0; border-top: 1px solid #333; margin: 15px 0;'>
+            <p><b>Enlaces Útiles:</b></p>
+             <p style='margin-top: 10px;'>🌐 <a href='https://luisalgomez111.github.io/WaveCore/' style='color: #D75239; text-decoration: none;'>Sitio Web Oficial (GitHub Pages)</a></p>
+             <p>🐙 <a href='https://github.com/luisalgomez111/WaveCore' style='color: #D75239; text-decoration: none;'>Repositorio en GitHub</a></p>
+        """,
     },
     "ru": {
         "window_title": "Менеджер Аудиобиблиотеки v1.0",
