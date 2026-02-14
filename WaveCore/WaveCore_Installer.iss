@@ -15,8 +15,8 @@ Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
 PrivilegesRequired=lowest
-SetupIconFile=d:\DR\DR_Python\src\resources\icons\WaveCore.ico
-UninstallDisplayIcon={app}\DR_App.exe
+SetupIconFile=d:\WaveCore\WaveCore\src\resources\icons\WaveCore.ico
+UninstallDisplayIcon={app}\WaveCore.exe
 
 [Languages]
 Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
@@ -26,13 +26,13 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "d:\DR\DR_Python\dist\DR_App.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "d:\WaveCore\WaveCore\dist\WaveCore.exe"; DestDir: "{app}"; Flags: ignoreversion
 ; Nota: Al usar --onefile en PyInstaller, solo necesitamos el .exe principal.
 
 [Icons]
-Name: "{group}\WaveCore"; Filename: "{app}\DR_App.exe"
+Name: "{group}\WaveCore"; Filename: "{app}\WaveCore.exe"
 Name: "{group}\{cm:UninstallProgram,WaveCore}"; Filename: "{uninstallexe}"
-Name: "{autodesktop}\WaveCore"; Filename: "{app}\DR_App.exe"; Tasks: desktopicon
+Name: "{autodesktop}\WaveCore"; Filename: "{app}\WaveCore.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\DR_App.exe"; Description: "{cm:LaunchProgram,WaveCore}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\WaveCore.exe"; Description: "{cm:LaunchProgram,WaveCore}"; Flags: nowait postinstall skipifsilent

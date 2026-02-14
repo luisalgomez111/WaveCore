@@ -2,10 +2,10 @@
 
 
 a = Analysis(
-    ['d:\\DR\\DR_Python\\src\\main.py'],
-    pathex=['d:\\DR\\DR_Python\\src'],
+    ['d:\\WaveCore\\WaveCore\\src\\main.py'],
+    pathex=['d:\\WaveCore\\WaveCore\\src'],
     binaries=[],
-    datas=[('d:\\DR\\DR_Python\\src\\resources', 'resources')],
+    datas=[('d:\\WaveCore\\WaveCore\\src\\resources', 'resources')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='DR_App',
+    name='WaveCore',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

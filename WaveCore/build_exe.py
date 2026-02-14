@@ -2,7 +2,7 @@
 import PyInstaller.__main__
 import os
 
-project_root = r"d:\DR\DR_Python"
+project_root = r"d:\WaveCore\WaveCore"
 entry_point = os.path.join(project_root, "src", "main.py")
 resources_src = os.path.join(project_root, "src", "resources")
 resources_dst = "resources"
@@ -18,7 +18,7 @@ os.environ["PATH"] = r"C:\Users\Public\Miniforge3\Library\bin" + os.pathsep + os
 # Build command arguments
 args = [
     entry_point,
-    '--name=DR_App',
+    '--name=WaveCore',
     '--onefile',
     '--noconsole',
     f'--paths={os.path.join(project_root, "src")}',
