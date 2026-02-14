@@ -794,11 +794,16 @@ footer {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 3rem;
+        font-size: 2.2rem;
     }
 
     .hero-content {
         text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .btn-secondary {
@@ -811,9 +816,43 @@ footer {
         display: none;
     }
 
+    .branding-container {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .showcase-item,
+    .showcase-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .showcase-img {
+        max-width: 100%;
+    }
+
     .steps-container,
     .donate-grid {
         flex-direction: column;
         grid-template-columns: 1fr;
+    }
+
+    .community-hub {
+        padding: 40px 20px;
+    }
+
+    .telegram-cta h3 {
+        font-size: 1.5rem;
+    }
+
+    .process-visual {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .top-bar {
+        font-size: 0.8rem;
     }
 }
