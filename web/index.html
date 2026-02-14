@@ -26,6 +26,7 @@
             <ul class="nav-links">
                 <li><a href="#features">Características</a></li>
                 <li><a href="tech.html">Tecnología</a></li>
+                <li><a href="#community">Comunidad</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#donate">Apoyar</a></li>
                 <li><a href="#download" class="btn-primary">Descargar</a></li>
@@ -227,6 +228,46 @@
         </div>
     </section>
 
+    <section id="community" class="community reveal">
+        <div class="container branding-container">
+            <div class="community-header">
+                <h2 class="section-title">Comunidad WaveCore</h2>
+                <p>Únete a la conversación, comparte tus librerías y deja tus sugerencias para mejorar la app.</p>
+                <div class="community-stats">
+                    <span><i data-lucide="users"></i> 1,200+ Miembros</span>
+                    <span><i data-lucide="message-square"></i> 450+ Comentarios</span>
+                </div>
+            </div>
+            <div class="community-hub glass-card">
+                <div class="forum-container">
+                    <div id="comment-list" class="comment-list">
+                        <!-- Comentarios cargados dinámicamente -->
+                        <div class="comment-item">
+                            <div class="avatar">JC</div>
+                            <div class="comment-body">
+                                <strong>Juan Carlos</strong>
+                                <p>¡Increíble herramienta! El visor de ondas es súper fluido.</p>
+                                <span class="comment-date">Hace 2 horas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-form">
+                        <h3>Deja tu Comentario</h3>
+                        <div class="form-group">
+                            <input type="text" id="user-name" placeholder="Tu nombre" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="user-comment" placeholder="¿Qué estás pensando?"
+                                class="form-input"></textarea>
+                        </div>
+                        <button onclick="postComment()" class="btn-primary">Registrar y Publicar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="donate" class="donate reveal">
         <div class="container">
             <h2 class="section-title">Apoya el Proyecto</h2>
@@ -386,6 +427,61 @@
             navigator.clipboard.writeText(addr);
             alert("Dirección copiada al portapapeles");
         }
+
+        // Community Forum Logic
+        const commentList = document.getElementById('comment-list');
+
+        function loadComments() {
+            const saved = JSON.parse(localStorage.getItem('wavecore_comments') || '[]');
+            // Keep the default comment if empty
+            if (saved.length === 0) return;
+
+            // Render saved comments
+            saved.forEach(c => addCommentToDOM(c.name, c.text, c.date, false));
+        }
+
+        function addCommentToDOM(name, text, date, isNew = true) {
+            const div = document.createElement('div');
+            div.className = 'comment-item reveal active';
+            const initial = name.substring(0, 2).toUpperCase();
+            div.innerHTML = `
+                <div class="avatar">${initial}</div>
+                <div class="comment-body">
+                    <strong>${name}</strong>
+                    <p>${text}</p>
+                    <span class="comment-date">${date}</span>
+                </div>
+            `;
+            if (isNew) {
+                commentList.prepend(div);
+            } else {
+                commentList.appendChild(div);
+            }
+        }
+
+        function postComment() {
+            const name = document.getElementById('user-name').value;
+            const text = document.getElementById('user-comment').value;
+
+            if (!name || !text) {
+                alert("Por favor completa ambos campos.");
+                return;
+            }
+
+            const date = "Justo ahora";
+            addCommentToDOM(name, text, date);
+
+            // Save to LocalStorage
+            const saved = JSON.parse(localStorage.getItem('wavecore_comments') || '[]');
+            saved.unshift({ name, text, date: new Date().toLocaleString() });
+            localStorage.setItem('wavecore_comments', JSON.stringify(saved));
+
+            // Clear inputs
+            document.getElementById('user-name').value = '';
+            document.getElementById('user-comment').value = '';
+        }
+
+        loadComments();
     </script>
 </body>
 
