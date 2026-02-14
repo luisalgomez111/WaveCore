@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌊 WaveCore Audio Library
 
 **WaveCore** es una herramienta profesional diseñada para diseñadores de sonido, editores de video y creativos que necesitan gestionar y buscar efectos de audio con la máxima velocidad y eficiencia.
@@ -38,3 +39,7 @@ Si te gusta este proyecto y quieres apoyar su desarrollo:
 - ☕ Apóyanos vía [PayPal](https://paypal.me/luisalbertogomez111) o Binance (USDT): `luisalbertogomez111@gmail.com`.
 
 Desarrollado con ❤️ por **Luis Alberto Gómez**.
+=======
+# WaveCore
+"WaveCore: Una bóveda de audio profesional y rápida para gestionar efectos locales, búsqueda en Freesound e integración con DAWs mediante Drag &amp; Drop."
+>>>>>>> 56433729fb3a28a285b9f9c5692c4f6a6e8bced7
