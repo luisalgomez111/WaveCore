@@ -43,13 +43,16 @@ class MainWindow(QMainWindow):
         
         # --- LOAD VAULT ---
         self.load_vault()
+        
+        # Deferred Welcome Screen
+        QTimer.singleShot(1000, self.show_welcome_screen)
 
-        # Show Welcome Dialog if it's the first run
+    def show_welcome_screen(self):
         if self.settings.value("show_welcome", True, type=bool):
-            from ui.dialogs import CustomDialog
+            from ui.dialogs import WelcomeDialog
             title = self.localizer.get("dialog_welcome_title")
             html = self.localizer.get("dialog_welcome_html")
-            dlg = CustomDialog(title, html, self, width=550)
+            dlg = WelcomeDialog(title, html, self)
             dlg.exec()
             self.settings.setValue("show_welcome", False)
 

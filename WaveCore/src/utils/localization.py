@@ -65,7 +65,7 @@ TRANSLATIONS = {
             </ul>
             <hr style='border: 0; border-top: 1px solid #333; margin: 15px 0;'>
             <p><b>Useful Links:</b></p>
-             <p style='margin-top: 10px;'>🌐 <a href='https://luisalgomez111.github.io/WaveCore/' style='color: #D75239; text-decoration: none;'>Official Website (GitHub Pages)</a></p>
+             <p style='margin-top: 10px;'>🌐 <a href='https://wave-core.vercel.app/' style='color: #D75239; text-decoration: none;'>Official Website (Vercel)</a></p>
              <p>🐙 <a href='https://github.com/luisalgomez111/WaveCore' style='color: #D75239; text-decoration: none;'>GitHub Repository</a></p>
         """,
     },
@@ -133,7 +133,7 @@ TRANSLATIONS = {
             </ul>
             <hr style='border: 0; border-top: 1px solid #333; margin: 15px 0;'>
             <p><b>Enlaces Útiles:</b></p>
-             <p style='margin-top: 10px;'>🌐 <a href='https://luisalgomez111.github.io/WaveCore/' style='color: #D75239; text-decoration: none;'>Sitio Web Oficial (GitHub Pages)</a></p>
+             <p style='margin-top: 10px;'>🌐 <a href='https://wave-core.vercel.app/' style='color: #D75239; text-decoration: none;'>Sitio Web Oficial (Vercel)</a></p>
              <p>🐙 <a href='https://github.com/luisalgomez111/WaveCore' style='color: #D75239; text-decoration: none;'>Repositorio en GitHub</a></p>
         """,
     },
