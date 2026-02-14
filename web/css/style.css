@@ -47,7 +47,8 @@ body {
 /* Glassmorphism Navigation */
 .glass-nav {
     position: fixed;
-    top: 36px; /* Shift down for top bar */
+    top: 36px;
+    /* Shift down for top bar */
     width: 100%;
     z-index: 1000;
     backdrop-filter: blur(15px);
@@ -272,6 +273,64 @@ h1 {
 
 .feature-card p {
     color: var(--text-muted);
+}
+
+/* Showcase Section */
+.showcase {
+    padding: 100px 0;
+}
+
+.showcase-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.showcase-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.showcase-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.showcase-img {
+    flex: 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
+}
+
+.showcase-img img {
+    width: 100%;
+    display: block;
+    transition: 0.5s;
+}
+
+.showcase-img:hover {
+    transform: scale(1.02);
+    border-color: var(--primary);
+}
+
+.showcase-text {
+    flex: 1;
+}
+
+.showcase-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.showcase-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 /* Download Section */
