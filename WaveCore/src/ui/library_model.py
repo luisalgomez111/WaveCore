@@ -15,10 +15,15 @@ class LibraryModel(QAbstractTableModel):
     
     COL_COUNT = LibraryColumns.COUNT
     
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, localizer=None):
         super().__init__(parent)
         self._tracks = [] # List of dicts
         self._playing_index = -1
+        self.localizer = localizer
+        
+    def set_localizer(self, localizer):
+        self.localizer = localizer
+        self.headerDataChanged.emit(Qt.Orientation.Horizontal, 0, self.COL_COUNT - 1)
         
     def add_tracks(self, tracks):
         if not tracks: return
@@ -76,7 +81,16 @@ class LibraryModel(QAbstractTableModel):
             return None
             
         if orientation == Qt.Orientation.Horizontal:
-            headers = ["#", "★", "", "Name", "Channels", "Format", "Duration", "Waveform"]
+            # We use keys from localization.py where available
+            loc = self.localizer
+            headers = [
+                "#", "★", "", 
+                loc.get("col_name") if loc else "Name",
+                loc.get("col_channels") if loc else "Channels",
+                loc.get("col_format") if loc else "Format",
+                loc.get("col_duration") if loc else "Duration",
+                loc.get("col_waveform") if loc else "Waveform"
+            ]
             if 0 <= section < len(headers):
                 return headers[section]
         return None

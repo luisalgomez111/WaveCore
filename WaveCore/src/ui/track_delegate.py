@@ -9,12 +9,19 @@ class TrackDelegate(QStyledItemDelegate):
     def __init__(self, parent=None):
         super().__init__(parent)
         
-        # Colors (Soundly Theme)
+        # Default Colors (Dark)
         self.text_color = QtGui.QColor("#cccccc")
         self.text_dim = QtGui.QColor("#888888")
         self.text_highlight = QtGui.QColor("#D75239")
         self.bg_selected = QtGui.QColor("#2a2a2a")
         self.bg_hover = QtGui.QColor("#1a1a1a")
+        
+    def apply_theme(self, t):
+        self.text_color = QtGui.QColor(t.get("text_main"))
+        self.text_dim = QtGui.QColor(t.get("text_secondary"))
+        self.text_highlight = QtGui.QColor(t.get("accent"))
+        self.bg_selected = QtGui.QColor(t.get("bg_button"))
+        self.bg_hover = QtGui.QColor(t.get("bg_toolbar"))
         
     def paint(self, painter, option, index):
         painter.save()

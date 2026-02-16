@@ -2,15 +2,15 @@
 
 
 a = Analysis(
-    ['d:\\WaveCore\\WaveCore\\src\\main.py'],
-    pathex=['d:\\WaveCore\\WaveCore\\src'],
+    ['WaveCore\\src\\main.py'],
+    pathex=['WaveCore\\src'],
     binaries=[],
-    datas=[('d:\\WaveCore\\WaveCore\\src\\resources', 'resources')],
+    datas=[('WaveCore\\src\\resources', 'resources')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
-    excludes=['tkinter'],
+    excludes=[],
     noarchive=False,
     optimize=0,
 )
@@ -35,5 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['d:\\WaveCore\\WaveCore\\src\\resources\\icons\\WaveCore.ico'],
+    icon=['WaveCore\\src\\resources\\icons\\WaveCore.ico'],
 )

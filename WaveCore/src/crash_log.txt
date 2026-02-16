@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "d:\WaveCore\WaveCore\src\ui\modules\PhotoPage.py", line 516, in search_online
+    self.perform_online_search()
+  File "d:\WaveCore\WaveCore\src\ui\modules\PhotoPage.py", line 573, in perform_online_search
+    print(f"Search Error: {e}")
+                           ^
+NameError: name 'e' is not defined

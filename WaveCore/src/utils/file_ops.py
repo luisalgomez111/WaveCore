@@ -2,18 +2,21 @@ import os
 import shutil
 # import send2trash # TODO: Add safely later
 from PyQt6.QtWidgets import QMessageBox
-from utils.constants import get_vault_path
+from utils.constants import get_vault_path, get_audio_path, get_video_path, get_photo_path
 
 def ensure_vault_exists():
-    """Creates the Vault folder if it doesn't exist. Returns the path."""
-    path = get_vault_path()
-    if not os.path.exists(path):
-        try:
-            os.makedirs(path)
-        except OSError as e:
-            print(f"Error creating vault: {e}")
-            return None
-    return path
+    """Creates the Vault folder and subfolders if they doesn't exist. Returns the path."""
+    vault_path = get_vault_path()
+    paths = [vault_path, get_audio_path(), get_video_path(), get_photo_path()]
+    
+    for path in paths:
+        if not os.path.exists(path):
+            try:
+                os.makedirs(path)
+            except OSError as e:
+                print(f"Error creating directory {path}: {e}")
+                return None
+    return vault_path
 
 
 def create_new_folder(parent_path, name="New Folder"):

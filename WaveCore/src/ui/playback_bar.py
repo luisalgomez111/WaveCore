@@ -17,16 +17,13 @@ class PlaybackBar(QWidget):
         self.setMinimumHeight(120) 
         self.current_track_path = None
         
-        # Shadow Effect
-        shadow = QGraphicsDropShadowEffect(self)
-        shadow.setBlurRadius(20)
-        shadow.setXOffset(0)
-        shadow.setYOffset(-5)
-        shadow.setColor(QColor(0, 0, 0, 150))
-        self.setGraphicsEffect(shadow)
+        # Remove Shadow Effect as requested
+        # shadow = QGraphicsDropShadowEffect(self)
+        # ...
+        # self.setGraphicsEffect(shadow)
         
         self.setStyleSheet("""
-            #PlaybackBar { background-color: #181818; border-top: 1px solid #2a2a2a; }
+            #PlaybackBar { background-color: #181818; border-top: none; }
             
             QPushButton {
                 background-color: transparent;
@@ -81,87 +78,76 @@ class PlaybackBar(QWidget):
         icon_vol = QIcon(os.path.join(icon_path, 'volume.svg'))
         icon_drag = QIcon(os.path.join(icon_path, 'drag.svg'))
         
-        # --- TOP ROW ---
-        top_layout = QHBoxLayout()
-        top_layout.setContentsMargins(0, 0, 0, 5) 
+        # --- MAIN CONTROLS ROW ---
+        controls_row = QHBoxLayout()
+        controls_row.setContentsMargins(10, 0, 10, 0)
+        controls_row.setSpacing(15)
         
         # 1. Track Info (Left)
-        info_layout = QVBoxLayout()
-        info_layout.setSpacing(2)
         self.lbl_title = QLabel("Select a track")
         self.lbl_title.setObjectName("track_title")
-        info_layout.addWidget(self.lbl_title)
-        top_layout.addLayout(info_layout, 1) 
+        self.lbl_title.setMinimumWidth(150)
+        self.lbl_title.setWordWrap(True)
+        controls_row.addWidget(self.lbl_title)
+        
+        controls_row.addStretch()
         
         # 2. Player Controls (Center)
-        ctrl_layout = QHBoxLayout()
-        ctrl_layout.setSpacing(10)
-        ctrl_layout.addStretch()
-        
         self.btn_speed = QPushButton("1.0x")
         self.btn_speed.setFixedSize(40, 24)
         self.btn_speed.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.btn_speed.setStyleSheet("color: #888888; border: 1px solid #444; border-radius: 12px; font-size: 10px;")
         self.btn_speed.clicked.connect(self.toggle_speed)
-        self.current_speed_idx = 0
+        self.current_speed_idx = 1 # 1.0x
         self.speeds = [0.5, 1.0, 1.5, 2.0]
-        ctrl_layout.addWidget(self.btn_speed)
+        controls_row.addWidget(self.btn_speed)
         
-        # --- DRAG BUTTON ---
         self.btn_drag = QPushButton()
         self.btn_drag.setObjectName("btn_drag")
         self.btn_drag.setIcon(icon_drag)
-        self.btn_drag.setIconSize(QSize(22, 22))
-        self.btn_drag.setFixedSize(40, 40)
-        self.btn_drag.setToolTip("Drag full track")
+        self.btn_drag.setIconSize(QSize(20, 20))
+        self.btn_drag.setFixedSize(32, 32)
         self.btn_drag.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.btn_drag.setCursor(Qt.CursorShape.OpenHandCursor)
-        # We handle the drag via mouse move oversight or custom event
         self.btn_drag.mousePressEvent = self._on_drag_press
         self.btn_drag.mouseMoveEvent = self._on_drag_move
-        ctrl_layout.addWidget(self.btn_drag)
+        controls_row.addWidget(self.btn_drag)
         
         self.btn_play = QPushButton()
         self.btn_play.setIcon(icon_play)
-        self.btn_play.setIconSize(QSize(24, 24))
-        self.btn_play.setFixedSize(40, 40)
+        self.btn_play.setIconSize(QSize(26, 26))
+        self.btn_play.setFixedSize(36, 36)
         self.btn_play.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.btn_play.clicked.connect(self.play_clicked.emit)
-        ctrl_layout.addWidget(self.btn_play)
+        controls_row.addWidget(self.btn_play)
         
         self.btn_pause = QPushButton()
         self.btn_pause.setIcon(icon_pause)
-        self.btn_pause.setIconSize(QSize(24, 24))
-        self.btn_pause.setFixedSize(40, 40)
+        self.btn_pause.setIconSize(QSize(26, 26))
+        self.btn_pause.setFixedSize(36, 36)
         self.btn_pause.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.btn_pause.clicked.connect(self.pause_clicked.emit)
-        ctrl_layout.addWidget(self.btn_pause)
+        controls_row.addWidget(self.btn_pause)
         
-        ctrl_layout.addStretch()
-        top_layout.addLayout(ctrl_layout, 2) 
+        controls_row.addStretch()
         
         # 3. Volume & Time (Right)
-        right_layout = QHBoxLayout()
-        right_layout.setSpacing(10)
-        
         self.lbl_time = QLabel("00:00 / 00:00")
         self.lbl_time.setObjectName("time")
-        right_layout.addWidget(self.lbl_time)
+        controls_row.addWidget(self.lbl_time)
         
         lbl_vol = QLabel()
-        lbl_vol.setPixmap(icon_vol.pixmap(16, 16))
-        right_layout.addWidget(lbl_vol)
+        lbl_vol.setPixmap(icon_vol.pixmap(14, 14))
+        controls_row.addWidget(lbl_vol)
         
         self.slider_vol = QSlider(Qt.Orientation.Horizontal)
         self.slider_vol.setRange(0, 100)
         self.slider_vol.setValue(80)
-        self.slider_vol.setFixedWidth(80)
+        self.slider_vol.setFixedWidth(70)
         self.slider_vol.valueChanged.connect(lambda v: self.volume_changed.emit(v / 100.0))
-        right_layout.addWidget(self.slider_vol)
+        controls_row.addWidget(self.slider_vol)
         
-        top_layout.addLayout(right_layout, 1) 
-        
-        layout.addLayout(top_layout, 0)
+        layout.addLayout(controls_row)
         
         # --- WAVEFORM (Bottom) ---
         self.waveform = WaveformWidget()
@@ -221,11 +207,54 @@ class PlaybackBar(QWidget):
             self.lbl_time.setText(f"{curr_s//60:02d}:{curr_s%60:02d} / {tot_s//60:02d}:{tot_s%60:02d}")
 
     def set_playing_state(self, is_playing):
-        if is_playing:
-            self.btn_play.setStyleSheet("background-color: transparent;")
-            self.btn_pause.setStyleSheet("background-color: transparent;") 
-        else:
-            self.btn_play.setStyleSheet("background-color: transparent;") 
-            self.btn_pause.setStyleSheet("background-color: transparent;")
+        # Optional: update UI icons/colors if needed
+        pass
+
+    def apply_theme(self, t):
+        self.setStyleSheet(f"""
+            #PlaybackBar {{ background-color: {t.get("bg_secondary")}; border-top: 1px solid {t.get("border")}; }}
+            
+            QPushButton {{
+                background-color: transparent;
+                border: none;
+                border-radius: 5px;
+            }}
+            QPushButton:hover {{ background-color: {t.get("bg_button")}; }}
+            
+            /* Labels */
+            QLabel {{ color: {t.get("text_secondary")}; font-family: 'Segoe UI', sans-serif; font-size: 12px; border: none; background: transparent; }}
+            QLabel#track_title {{ color: {t.get("text_main")}; font-weight: bold; font-size: 13px; }}
+            QLabel#time {{ font-family: 'Consolas', monospace; color: {t.get("text_secondary")}; }}
+            
+            /* Sliders */
+            QSlider::groove:horizontal {{
+                border: 1px solid {t.get("border")};
+                height: 4px;
+                background: {t.get("bg_button")};
+                border-radius: 2px;
+            }}
+            QSlider::sub-page:horizontal {{
+                background: {t.get("accent")};
+                border-radius: 2px;
+            }}
+            QSlider::handle:horizontal {{
+                background: {t.get("text_main")};
+                width: 10px;
+                height: 10px;
+                margin: -3px 0; 
+                border-radius: 5px;
+            }}
+            
+            QPushButton#btn_play:hover, QPushButton#btn_pause:hover, QPushButton#btn_drag:hover {{
+                background-color: {t.get("bg_toolbar")};
+            }}
+        """)
+        
+        # Speed button special style
+        self.btn_speed.setStyleSheet(f"color: {t.get('text_secondary')}; border: 1px solid {t.get('border')}; border-radius: 12px; font-size: 10px;")
+        
+        # Waveform colors
+        self.waveform.set_colors(t.get("text_secondary"), t.get("accent"))
+        self.waveform.update()
 
 
