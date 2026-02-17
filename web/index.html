@@ -553,6 +553,21 @@
             el.addEventListener('mouseenter', () => clearInterval(autoPlay));
             el.addEventListener('mouseleave', () => autoPlay = setInterval(() => moveToSlide(currentSlideIndex + 1), 5000));
         });
+
+        // Dropdown Toggle Logic
+        const dropbtn = document.querySelector('.dropbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        if (dropbtn && dropdownContent) {
+            dropbtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownContent.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                dropdownContent.classList.remove('show');
+            });
+        }
     </script>
 </body>
 

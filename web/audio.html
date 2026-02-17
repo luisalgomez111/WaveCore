@@ -225,6 +225,21 @@
 
     <script>
         lucide.createIcons();
+
+        // Dropdown Toggle Logic
+        const dropbtn = document.querySelector('.dropbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        if (dropbtn && dropdownContent) {
+            dropbtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownContent.classList.toggle('show');
+            });
+
+            window.addEventListener('click', () => {
+                dropdownContent.classList.remove('show');
+            });
+        }
     </script>
 </body>
 
