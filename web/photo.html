@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Fotos | WaveCore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .module-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, rgba(215, 82, 57, 0.1) 0%, rgba(10, 10, 11, 1) 100%);
+            text-align: center;
+        }
+
+        .instruction-section {
+            padding: 60px 0;
+        }
+
+        .instruction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .instruction-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .instruction-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .instruction-card i {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .instruction-card h3 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .instruction-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .feature-highlight {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-highlight img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 100%;
+            height: auto;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-text h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .step-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .step-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-muted);
+        }
+
+        .step-list li b {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <img src="img/logo.png" alt="WaveCore Logo" class="nav-logo-img">
+                <span>WaveCore</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="photo.html" class="active">Fotos</a></li>
+                <li><a href="tech.html">Tecnología</a></li>
+                <li><a href="https://github.com/luisalgomez111/WaveCore/releases/tag/v2.0.0"
+                        class="btn-primary">Descargar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="module-hero">
+        <div class="container">
+            <h1 class="text-gradient">Bóveda de Activos Visuales</h1>
+            <p class="hero-subtitle">La forma más rápida de organizar y encontrar imágenes profesionales para tus
+                proyectos.</p>
+        </div>
+    </header>
+
+    <section class="instruction-section">
+        <div class="container">
+            <div class="feature-highlight">
+                <div class="feature-text">
+                    <h2>Inspección de Imágenes</h2>
+                    <p>Gestiona tu librería de fotos con un inspector rico en detalles técnicos y previsualización
+                        instantánea.</p>
+                    <ul class="step-list">
+                        <li><i data-lucide="image" style="width: 18px;"></i> <b>Galería Minimalista:</b> Visualiza tus
+                            activos con una cuadrícula limpia y fluida.</li>
+                        <li><i data-lucide="maximize" style="width: 18px;"></i> <b>Detalle Técnico:</b> Consulta
+                            resolución (px), tamaño de archivo y formato (JPG, PNG, WebP) al instante.</li>
+                        <li><i data-lucide="file-check" style="width: 18px;"></i> <b>Ruta de Archivo:</b> Localiza
+                            exactamente dónde está guardada cada imagen en tu disco.</li>
+                    </ul>
+                </div>
+                <img src="img/modulo de fotos.png" alt="Photo Module View">
+            </div>
+
+            <h2 class="section-title">Instrucciones de Uso</h2>
+            <div class="instruction-grid">
+                <div class="instruction-card">
+                    <i data-lucide="upload" style="width: 48px; height: 48px;"></i>
+                    <h3>Importación Masiva</h3>
+                    <p>Usa <b>"Import Photos"</b> para añadir tus propias colecciones a WaveCore. La aplicación genera
+                        vistas previas ligeras para una navegación suave sin retardo.</p>
+                </div>
+                <div class="instruction-card">
+                    <i data-lucide="cloud" style="width: 48px; height: 48px;"></i>
+                    <h3>Triple Integración Online</h3>
+                    <p>En la pestaña <b>"Downloads"</b>, busca simultáneamente en <b>Unsplash, Pixabay y Pexels</b>.
+                        Tienes acceso a los mejores repositorios HD del mundo sin salir de la app.</p>
+                </div>
+                <div class="instruction-card">
+                    <i data-lucide="move" style="width: 48px; height: 48px;"></i>
+                    <h3>Flujo de Trabajo (Drag)</h3>
+                    <p>Arrastra cualquier imagen directamente desde WaveCore a <b>Photoshop, Figma, Illustrator</b> o tu
+                        explorador de archivos. Rapidez pura.</p>
+                </div>
+                <div class="instruction-card">
+                    <i data-lucide="edit-3" style="width: 48px; height: 48px;"></i>
+                    <h3>Edición de Metadatos Locales</h3>
+                    <p>Renombra tus archivos directamente desde la interfaz para mantener una nomenclatura profesional
+                        en toda tu librería de activos.</p>
+                </div>
+            </div>
+
+            <div class="feature-highlight reverse">
+                <img src="img/modulo de descarga de fotos.png" alt="Photo Download Search">
+                <div class="feature-text">
+                    <h2>Inspiración Instantánea</h2>
+                    <p>Encuentra la imagen perfecta para tu mockup o composición en segundos.</p>
+                    <ul class="step-list">
+                        <li><i data-lucide="search" style="width: 18px;"></i> <b>Unsplash Nativo:</b> La red de
+                            fotografía más estética del mundo a tu alcance.</li>
+                        <li><i data-lucide="download" style="width: 18px;"></i> <b>Añade a Librería:</b> Descarga fotos
+                            en su resolución original directamente a tu carpeta de trabajo.</li>
+                        <li><i data-lucide="shield" style="width: 18px;"></i> <b>Sin Copyright:</b> Enfócate en crear
+                            con recursos listos para proyectos comerciales o personales.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="img/logo.png" alt="WaveCore Logo"
+                    style="height: 24px; vertical-align: middle; margin-right: 10px;">
+                <span>WaveCore Project</span>
+            </div>
+            <p>&copy; 2026 The WaveCore Project. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/luisalgomez111/WaveCore"><i data-lucide="github"></i> GitHub</a>
+                <a href="tech.html">Documentación</a>
+                <a href="index.html">Inicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

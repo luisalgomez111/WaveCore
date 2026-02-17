@@ -28,10 +28,17 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#features">Características</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Módulos <i data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="audio.html">Audio</a>
+                        <a href="video.html">Video</a>
+                        <a href="photo.html">Fotos</a>
+                    </div>
+                </li>
                 <li><a href="tech.html">Tecnología</a></li>
                 <li><a href="#community">Comunidad</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#donate">Apoyar</a></li>
                 <li><a href="https://github.com/luisalgomez111/WaveCore/releases/tag/v2.0.0"
                         class="btn-primary">Descargar
                         v2.0.0</a></li>
@@ -84,82 +91,121 @@
     </section>
 
     <section id="showcase" class="showcase reveal">
-        <div class="container">
-            <h2 class="section-title">Potencia tu Flujo de Audio</h2>
-            <div class="showcase-grid">
-                <div class="showcase-item">
-                    <div class="showcase-img">
-                        <img src="img/waveform_view.png" alt="WaveCore Waveform View">
+        <div class="container overflow-hidden">
+            <h2 class="section-title">Showcase Visual</h2>
+            <div class="carousel-container">
+                <div class="carousel-track" id="carousel-track">
+                    <!-- Slide 1: Waveform -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/waveform_view.png" alt="WaveCore Waveform View">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Visualización de Alta Fidelidad</h3>
+                                <p>Interactúa con tus sonidos a través de una <b>forma de onda ampliable y
+                                        profesional</b>. Cada detalle transitorio es visible, permitiéndote tomar
+                                    decisiones creativas con total claridad.</p>
+                                <a href="audio.html" class="btn-secondary">Más sobre Audio</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="showcase-text">
-                        <h3>Visualización de Alta Fidelidad</h3>
-                        <p>Interactúa con tus sonidos a través de una <b>forma de onda ampliable y profesional</b>. Cada
-                            detalle transitorio es visible, permitiéndote tomar decisiones creativas con total claridad.
-                        </p>
+                    <!-- Slide 2: Online Search -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/online_search.png" alt="WaveCore Freesound Integration">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Acceso Instantáneo a Recursos</h3>
+                                <p>Encuentra el efecto perfecto con la <b>descarga directa desde Freesound</b>. Busca y
+                                    previsualiza millones de sonidos sin interrumpir tu proceso creativo.</p>
+                                <a href="audio.html" class="btn-secondary">Más sobre Audio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Fragment Selection -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/fragment_selection.png" alt="WaveCore Fragment Selection">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Control de Precisión</h3>
+                                <p>Optimiza tu flujo de trabajo mediante la <b>selección de fragmentos específicos</b>
+                                    de la pista. Arrastra solo la parte que necesitas directamente a tu proyecto,
+                                    ahorrando tiempo y almacenamiento.</p>
+                                <a href="audio.html" class="btn-secondary">Más sobre Audio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Video Module -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/modulo de videos.png" alt="WaveCore Video Integration">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Gestión de Video Dinámica</h3>
+                                <p>Previsualiza y gestiona tu librería de videos con la misma fluidez que tu audio.
+                                    <b>Indexación instantánea</b> y reproducción optimizada.
+                                </p>
+                                <a href="video.html" class="btn-secondary">Más sobre Video</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Video Search -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/modulo de descarga de videos.png" alt="WaveCore Video Search">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Búsqueda y Descarga de Video</h3>
+                                <p>Accede a librerías globales de video para tus producciones. <b>Encuentra,
+                                        previsualiza y descarga</b> clips en alta resolución directamente desde la app.
+                                </p>
+                                <a href="video.html" class="btn-secondary">Más sobre Video</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 6: Photo Module -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/modulo de fotos.png" alt="WaveCore Photo Vault">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Bóveda de Fotos Profesional</h3>
+                                <p>Navega por tus activos visuales con un <b>diseño de galería minimalista</b> y paneles
+                                    de inspección ricos en metadatos.</p>
+                                <a href="photo.html" class="btn-secondary">Más sobre Fotos</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 7: Photo Search -->
+                    <div class="carousel-slide">
+                        <div class="showcase-item">
+                            <div class="showcase-img">
+                                <img src="img/modulo de descarga de fotos.png" alt="WaveCore Photo Search">
+                            </div>
+                            <div class="showcase-text">
+                                <h3>Descarga de Fotos HD</h3>
+                                <p>Integración con los mejores repositorios de imágenes. No interrumpas tu flujo:
+                                    <b>busca y añade fotos profesionales</b> a tu biblioteca en segundos.
+                                </p>
+                                <a href="photo.html" class="btn-secondary">Más sobre Fotos</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="showcase-item reverse">
-                    <div class="showcase-img">
-                        <img src="img/online_search.png" alt="WaveCore Freesound Integration">
-                    </div>
-                    <div class="showcase-text">
-                        <h3>Acceso Instantáneo a Recursos</h3>
-                        <p>Encuentra el efecto perfecto con la <b>descarga directa desde Freesound</b>. Busca y
-                            previsualiza millones de sonidos sin interrumpir tu proceso creativo.</p>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <div class="showcase-img">
-                        <img src="img/fragment_selection.png" alt="WaveCore Fragment Selection">
-                    </div>
-                    <div class="showcase-text">
-                        <h3>Control de Precisión</h3>
-                        <p>Optimiza tu flujo de trabajo mediante la <b>selección de fragmentos específicos</b> de la
-                            pista. Arrastra solo la parte que necesitas directamente a tu proyecto, ahorrando tiempo y
-                            almacenamiento.</p>
-                    </div>
-                </div>
-                <div class="showcase-item reverse">
-                    <div class="showcase-img">
-                        <img src="img/modulo de videos.png" alt="WaveCore Video Integration">
-                    </div>
-                    <div class="showcase-text">
-                        <h3>Gestión de Video Dinámica</h3>
-                        <p>Previsualiza y gestiona tu librería de videos con la misma fluidez que tu audio.
-                            <b>Indexación instantánea</b> y reproducción optimizada.
-                        </p>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <div class="showcase-img">
-                        <img src="img/modulo de fotos.png" alt="WaveCore Photo Vault">
-                    </div>
-                    <div class="showcase-text">
-                        <h3>Bóveda de Fotos Profesional</h3>
-                        <p>Navega por tus activos visuales con un <b>diseño de galería minimalista</b> y paneles de
-                            inspección ricos en metadatos.</p>
-                    </div>
-                </div>
-                <div class="showcase-item reverse">
-                    <div class="showcase-img">
-                        <img src="img/modulo de descarga de videos.png" alt="WaveCore Video Search">
-                    </div>
-                    <div class="showcase-text">
-                        <h3>Búsqueda y Descarga de Video</h3>
-                        <p>Accede a librerías globales de video para tus producciones. <b>Encuentra, previsualiza y
-                                descarga</b> clips en alta resolución directamente desde la app.</p>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <div class="showcase-img">
-                        <img src="img/modulo de descarga de fotos.png" alt="WaveCore Photo Search">
-                    </div>
-                    <div class="showcase-text">
-                        <h3>Descarga de Fotos HD</h3>
-                        <p>Integración con los mejores repositorios de imágenes. No interrumpas tu flujo: <b>busca y
-                                añade fotos profesionales</b> a tu biblioteca en segundos.</p>
-                    </div>
-                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-btn prev" id="prevBtn"><i data-lucide="chevron-left"></i></button>
+                <button class="carousel-btn next" id="nextBtn"><i data-lucide="chevron-right"></i></button>
+
+                <!-- Dot Indicators -->
+                <div class="carousel-dots" id="carousel-dots"></div>
             </div>
         </div>
     </section>
@@ -468,6 +514,51 @@
             navigator.clipboard.writeText(addr);
             alert("Dirección copiada al portapapeles");
         }
+
+        // Showcase Carousel Logic
+        const track = document.getElementById('carousel-track');
+        const slides = Array.from(track.children);
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const dotsNav = document.getElementById('carousel-dots');
+
+        let currentSlideIndex = 0;
+
+        // Create dots
+        slides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => moveToSlide(index));
+            dotsNav.appendChild(dot);
+        });
+
+        const dots = Array.from(dotsNav.children);
+
+        function updateDots(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function moveToSlide(index) {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            currentSlideIndex = index;
+            updateDots(index);
+        }
+
+        nextBtn.addEventListener('click', () => moveToSlide(currentSlideIndex + 1));
+        prevBtn.addEventListener('click', () => moveToSlide(currentSlideIndex - 1));
+
+        // Auto play
+        let autoPlay = setInterval(() => moveToSlide(currentSlideIndex + 1), 5000);
+
+        // Stop auto play on interaction
+        [nextBtn, prevBtn, dotsNav].forEach(el => {
+            el.addEventListener('mouseenter', () => clearInterval(autoPlay));
+            el.addEventListener('mouseleave', () => autoPlay = setInterval(() => moveToSlide(currentSlideIndex + 1), 5000));
+        });
     </script>
 </body>
 

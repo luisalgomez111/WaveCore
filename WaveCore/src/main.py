@@ -23,7 +23,7 @@ def main():
     # Windows taskbar icon fix: Set AppUserModelID to ensure the icon is shown
     if sys.platform == 'win32':
         import ctypes
-        myappid = 'com.wavecore.audiomanager.v1'
+        myappid = 'com.wavecore.audiomanager.v2'
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
 
     app = QApplication(sys.argv)

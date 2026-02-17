@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo de Audio | WaveCore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .module-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, rgba(215, 82, 57, 0.1) 0%, rgba(10, 10, 11, 1) 100%);
+            text-align: center;
+        }
+
+        .instruction-section {
+            padding: 60px 0;
+        }
+
+        .instruction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .instruction-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .instruction-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .instruction-card i {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .instruction-card h3 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .instruction-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .feature-highlight {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 40px;
+            margin: 40px 0;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .feature-highlight img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 100%;
+            height: auto;
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .feature-text h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .step-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .step-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-muted);
+        }
+
+        .step-list li b {
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="glass-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <img src="img/logo.png" alt="WaveCore Logo" class="nav-logo-img">
+                <span>WaveCore</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="audio.html" class="active">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="photo.html">Fotos</a></li>
+                <li><a href="tech.html">Tecnología</a></li>
+                <li><a href="https://github.com/luisalgomez111/WaveCore/releases/tag/v2.0.0"
+                        class="btn-primary">Descargar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="module-hero">
+        <div class="container">
+            <h1 class="text-gradient">Módulo de Audio Profesional</h1>
+            <p class="hero-subtitle">La herramienta definitiva para la gestión y manipulación de efectos de sonido.</p>
+        </div>
+    </header>
+
+    <section class="instruction-section">
+        <div class="container">
+            <div class="feature-highlight">
+                <div class="feature-text">
+                    <h2>Visualización y Control Total</h2>
+                    <p>El núcleo de WaveCore es su visor de forma de onda de alta fidelidad. No solo escuchas el sonido,
+                        lo ves y lo moldeas a tu necesidad.</p>
+                    <ul class="step-list">
+                        <li><i data-lucide="check-circle" style="width: 18px;"></i> <b>Zoom de Precisión:</b> Analiza
+                            cada transitorio para encontrar el punto exacto de inicio.</li>
+                        <li><i data-lucide="check-circle" style="width: 18px;"></i> <b>Selección de Fragmentos:</b>
+                            Selecciona solo la parte que necesitas con un simple click y arrastre.</li>
+                        <li><i data-lucide="check-circle" style="width: 18px;"></i> <b>Drag & Drop Directo:</b> Arrastra
+                            tu selección directamente a Premiere, DaVinci o tu DAW.</li>
+                    </ul>
+                </div>
+                <img src="img/waveform_view.png" alt="Waveform View">
+            </div>
+
+            <h2 class="section-title">Instrucciones de Uso</h2>
+            <div class="instruction-grid">
+                <div class="instruction-card">
+                    <i data-lucide="search" style="width: 48px; height: 48px;"></i>
+                    <h3>Búsqueda Online (Freesound)</h3>
+                    <p>Accede a la pestaña <b>"Online"</b> en el panel lateral. Escribe lo que buscas y previsualiza
+                        millones de sonidos al instante. Puedes descargarlos directamente a tu librería con un solo
+                        click.</p>
+                </div>
+                <div class="instruction-card">
+                    <i data-lucide="star" style="width: 48px; height: 48px;"></i>
+                    <h3>Favoritos</h3>
+                    <p>Marca tus sonidos más usados haciendo click en la estrella. Se guardarán en la categoría especial
+                        <b>"Favorites"</b> para un acceso ultra rápido en futuros proyectos.</p>
+                </div>
+                <div class="instruction-card">
+                    <i data-lucide="layers" style="width: 48px; height: 48px;"></i>
+                    <h3>Multi-selección</h3>
+                    <p>Mantén presionada la tecla <b>Ctrl</b> para seleccionar varios archivos. Puedes renombrarlos o
+                        eliminarlos por lotes, optimizando el mantenimiento de tu bóveda.</p>
+                </div>
+                <div class="instruction-card">
+                    <i data-lucide="settings-2" style="width: 48px; height: 48px;"></i>
+                    <h3>Control de Reproducción</h3>
+                    <p>Ajusta la velocidad de previsualización sin cambiar el tono, controla el volumen y navega por la
+                        onda usando la barra de reproducción inferior enriquecida.</p>
+                </div>
+            </div>
+
+            <div class="feature-highlight reverse">
+                <img src="img/online_search.png" alt="Online Search">
+                <div class="feature-text">
+                    <h2>Tu Bóveda, Expandida</h2>
+                    <p>WaveCore no solo gestiona lo que tienes, te ayuda a encontrar lo que te falta gracias a su
+                        integración con APIs globales.</p>
+                    <ul class="step-list">
+                        <li><i data-lucide="globe" style="width: 18px;"></i> <b>Freesound Nativo:</b> Busca en la
+                            librería de audio libre más grande del mundo.</li>
+                        <li><i data-lucide="download" style="width: 18px;"></i> <b>Auto-Organización:</b> Las descargas
+                            se integran automáticamente en tu estructura de carpetas.</li>
+                        <li><i data-lucide="zap" style="width: 18px;"></i> <b>Velocidad Máxima:</b> Sin logins
+                            complicados, todo desde la misma interfaz.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="img/logo.png" alt="WaveCore Logo"
+                    style="height: 24px; vertical-align: middle; margin-right: 10px;">
+                <span>WaveCore Project</span>
+            </div>
+            <p>&copy; 2026 The WaveCore Project. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://github.com/luisalgomez111/WaveCore"><i data-lucide="github"></i> GitHub</a>
+                <a href="tech.html">Documentación</a>
+                <a href="index.html">Inicio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
